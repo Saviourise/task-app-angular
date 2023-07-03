@@ -47,6 +47,11 @@ export class HomeComponent {
     private stateService: StateService
   ) {}
 
+  toggleNav(): void {
+    const nav: any = document.getElementById('nav');
+    nav.classList.toggle('open');
+  }
+
   submitForm() {
     const tasks = localStorage.getItem('tasks');
     let tasksArray = [];

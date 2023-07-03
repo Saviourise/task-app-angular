@@ -1,10 +1,20 @@
 <app-sidenav></app-sidenav>
 
 <div class="board-container">
-  <h1>Task Dashboard</h1>
+  <div class="close">
+    <button sui-button suiEmphasis="secondary" (click)="toggleNav()">
+      <i class="fa fa-bars"></i>
+    </button>
+  </div>
+  <h1>
+    Task Dashboard
+    <a href="/add">
+      <button sui-button suiEmphasis="primary">Add Task</button></a
+    >
+  </h1>
   <div class="board-cards-container">
     <div class="board-card-container">
-      <h2>To do</h2>
+      <h3>To do</h3>
 
       <div
         cdkDropList
@@ -17,7 +27,7 @@
         <div class="board-card-box" *ngFor="let item of todo" cdkDrag>
           <div sui-card suiColour="blue">
             <div class="content">
-              <p id="id" style="display: none;">{{ item.id }}</p>
+              <p id="id" style="display: none">{{ item.id }}</p>
               <p id="name">{{ item.name }}</p>
               <p>{{ item.description }}</p>
             </div>
@@ -27,7 +37,7 @@
     </div>
 
     <div class="board-card-container">
-      <h2>In Progress</h2>
+      <h3>In Progress</h3>
 
       <div
         cdkDropList
@@ -38,15 +48,19 @@
         (cdkDropListDropped)="drop($event)"
       >
         <div class="board-card-box" *ngFor="let item of progress" cdkDrag>
-          <p id="id" style="display: none;">{{ item.id }}</p>
-          <p id="name">{{ item.name }}</p>
-          <p>{{ item.description }}</p>
+          <div sui-card suiColour="orange">
+            <div class="content">
+              <p id="id" style="display: none">{{ item.id }}</p>
+              <p id="name">{{ item.name }}</p>
+              <p>{{ item.description }}</p>
+            </div>
+          </div>
         </div>
       </div>
     </div>
 
     <div class="board-card-container">
-      <h2>Done</h2>
+      <h3>Done</h3>
 
       <div
         cdkDropList
@@ -57,9 +71,13 @@
         (cdkDropListDropped)="drop($event)"
       >
         <div class="board-card-box" *ngFor="let item of done" cdkDrag>
-          <p id="id" style="display: none;">{{ item.id }}</p>
-          <p id="name">{{ item.name }}</p>
-          <p>{{ item.description }}</p>
+          <div sui-card suiColour="green">
+            <div class="content">
+              <p id="id" style="display: none">{{ item.id }}</p>
+              <p id="name">{{ item.name }}</p>
+              <p>{{ item.description }}</p>
+            </div>
+          </div>
         </div>
       </div>
     </div>

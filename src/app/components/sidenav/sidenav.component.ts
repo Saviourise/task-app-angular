@@ -7,8 +7,13 @@ import { Router } from '@angular/router';
   styleUrls: ['./sidenav.component.scss'],
 })
 export class SidenavComponent {
-  page = "/"
+  page = '/';
   constructor(private router: Router) {
     this.page = this.router.url;
+  }
+
+  toggleNav(): void {
+    const nav: any = document.getElementById('nav');
+    nav.classList.toggle('open');
   }
 }

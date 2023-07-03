@@ -9,6 +9,7 @@ import {
 } from '@angular/cdk/drag-drop';
 import { SidenavModule } from '../sidenav/sidenav.module';
 import { NotificationService } from '../../services/notification/notification.service';
+import { NgxSemanticModule } from 'ngx-semantic';
 import { StateService } from '../../services/state/state.service';
 
 @Component({
@@ -16,7 +17,7 @@ import { StateService } from '../../services/state/state.service';
   templateUrl: './board.component.html',
   styleUrls: ['./board.component.scss'],
   standalone: true,
-  imports: [CdkDropList, NgFor, CdkDrag, SidenavModule],
+  imports: [CdkDropList, NgFor, CdkDrag, SidenavModule, NgxSemanticModule],
 })
 export class BoardComponent {
   todo: {
@@ -100,6 +101,11 @@ export class BoardComponent {
     @Inject(StateService) private stateService: StateService,
     @Inject(NotificationService) private notification: NotificationService
   ) {}
+
+  toggleNav(): void {
+    const nav: any = document.getElementById('nav');
+    nav.classList.toggle('open');
+  }
 
   ngOnInit(): void {
     this.stateService.tasks && this.loadTasks(this.stateService.tasks);

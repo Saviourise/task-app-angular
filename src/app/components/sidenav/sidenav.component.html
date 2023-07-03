@@ -1,8 +1,8 @@
-<mat-sidenav-container class="example-container">
+<mat-sidenav-container class="example-container" id="nav">
   <mat-sidenav mode="side" class="sidenav-container" opened>
     <ul>
-      <a href="/"
-        ><li [ngClass]="{ active: this.page === '/' }">Add Task</li></a
+      <a href="/add"
+        ><li [ngClass]="{ active: this.page === '/add' }">Add Task</li></a
       >
       <a href="board">
         <li [ngClass]="{ active: this.page === '/board' }">Board</li></a
@@ -13,6 +13,7 @@
       <a href="document"
         ><li [ngClass]="{ active: this.page === '/document' }">Document</li></a
       >
+      <li class="close" (click)="toggleNav()">Close</li>
     </ul>
   </mat-sidenav>
 </mat-sidenav-container>

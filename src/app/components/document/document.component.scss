@@ -1,0 +1,26 @@
+.document-container {
+  width: calc(100% - 250px);
+  position: relative;
+  left: 250px;
+  padding: 20px;
+}
+
+.document-container h1 {
+  font-size: 30px;
+  font-weight: 600;
+  margin-bottom: 20px;
+}
+
+.close {
+  display: none;
+}
+
+@media screen and (max-width: 768px) {
+  .document-container {
+    width: 100%;
+    left: 0;
+  }
+  .close {
+    display: block;
+  }
+}
