@@ -24,12 +24,13 @@
         class="board-card-list"
         (cdkDropListDropped)="drop($event)"
       >
+        <p *ngIf="todo.length <= 0">No task</p>
+
         <div class="board-card-box" *ngFor="let item of todo" cdkDrag>
           <div sui-card suiColour="blue">
             <div class="content">
               <p id="id" style="display: none">{{ item.id }}</p>
               <p id="name">{{ item.name }}</p>
-              <p *ngIf="todo.length <= 0">No task</p>
 
               <p>{{ item.description }}</p>
             </div>
@@ -49,12 +50,13 @@
         class="board-card-list"
         (cdkDropListDropped)="drop($event)"
       >
+        <p *ngIf="progress.length <= 0">No task</p>
+
         <div class="board-card-box" *ngFor="let item of progress" cdkDrag>
           <div sui-card suiColour="orange">
             <div class="content">
               <p id="id" style="display: none">{{ item.id }}</p>
               <p id="name">{{ item.name }}</p>
-              <p *ngIf="progress.length <= 0">No task</p>
 
               <p>{{ item.description }}</p>
             </div>
@@ -74,12 +76,13 @@
         class="board-card-list"
         (cdkDropListDropped)="drop($event)"
       >
+        <p *ngIf="done.length <= 0">No task</p>
+
         <div class="board-card-box" *ngFor="let item of done" cdkDrag>
           <div sui-card suiColour="green">
             <div class="content">
               <p id="id" style="display: none">{{ item.id }}</p>
               <p id="name">{{ item.name }}</p>
-              <p *ngIf="done.length <= 0">No task</p>
               <p>{{ item.description }}</p>
             </div>
           </div>
