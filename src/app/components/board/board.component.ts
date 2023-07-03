@@ -1,5 +1,5 @@
 import { Component, Inject } from '@angular/core';
-import { NgFor } from '@angular/common';
+import { NgFor, NgIf } from '@angular/common';
 import {
   CdkDragDrop,
   moveItemInArray,
@@ -17,7 +17,7 @@ import { StateService } from '../../services/state/state.service';
   templateUrl: './board.component.html',
   styleUrls: ['./board.component.scss'],
   standalone: true,
-  imports: [CdkDropList, NgFor, CdkDrag, SidenavModule, NgxSemanticModule],
+  imports: [CdkDropList, NgFor, NgIf, CdkDrag, SidenavModule, NgxSemanticModule],
 })
 export class BoardComponent {
   todo: {

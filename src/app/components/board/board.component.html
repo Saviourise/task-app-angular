@@ -29,6 +29,8 @@
             <div class="content">
               <p id="id" style="display: none">{{ item.id }}</p>
               <p id="name">{{ item.name }}</p>
+              <p *ngIf="todo.length <= 0">No task</p>
+
               <p>{{ item.description }}</p>
             </div>
           </div>
@@ -52,6 +54,8 @@
             <div class="content">
               <p id="id" style="display: none">{{ item.id }}</p>
               <p id="name">{{ item.name }}</p>
+              <p *ngIf="progress.length <= 0">No task</p>
+
               <p>{{ item.description }}</p>
             </div>
           </div>
@@ -75,6 +79,7 @@
             <div class="content">
               <p id="id" style="display: none">{{ item.id }}</p>
               <p id="name">{{ item.name }}</p>
+              <p *ngIf="done.length <= 0">No task</p>
               <p>{{ item.description }}</p>
             </div>
           </div>
