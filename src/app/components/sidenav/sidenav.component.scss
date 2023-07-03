@@ -1,0 +1,46 @@
+.example-container {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: #eee;
+  border: 1px solid #ddd;
+  width: 250px;
+}
+
+.sidenav-container {
+  padding: 20px;
+  width: 100%;
+}
+
+.sidenav-container ul {
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  width: 100%;
+}
+
+.sidenav-container li {
+  cursor: pointer;
+  list-style: none;
+  font-size: 15px;
+  font-weight: 600;
+  border-radius: 5px;
+  padding: 10px;
+  transition: all 0.3s ease-in-out;
+  width: 100%;
+  color: #000;
+}
+
+.sidenav-container li:hover {
+  color: #fff;
+  background: #000;
+}
+
+.sidenav-container li.active {
+  color: #fff;
+  background: #000;
+}

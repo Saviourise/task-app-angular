@@ -1,0 +1,18 @@
+<mat-sidenav-container class="example-container">
+  <mat-sidenav mode="side" class="sidenav-container" opened>
+    <ul>
+      <a href="/"
+        ><li [ngClass]="{ active: this.page === '/' }">Add Task</li></a
+      >
+      <a href="board">
+        <li [ngClass]="{ active: this.page === '/board' }">Board</li></a
+      >
+      <a href="calendar">
+        <li [ngClass]="{ active: this.page === '/calendar' }">Calendar</li></a
+      >
+      <a href="document"
+        ><li [ngClass]="{ active: this.page === '/document' }">Document</li></a
+      >
+    </ul>
+  </mat-sidenav>
+</mat-sidenav-container>

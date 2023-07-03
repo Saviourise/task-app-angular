@@ -1,0 +1,13 @@
+.home-container {
+  width: calc(100% - 250px);
+  position: relative;
+  left: 250px;
+  padding: 20px;
+}
+
+.home-container h1 {
+  font-size: 30px;
+  font-weight: 600;
+  margin-bottom: 20px;
+  text-align: center;
+}

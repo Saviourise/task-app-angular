@@ -1,0 +1,65 @@
+<app-sidenav></app-sidenav>
+
+<div class="home-container">
+  <h1>Add Task</h1>
+
+  <form
+    sui-form
+    suiState="error"
+    [formGroup]="addTaskForm"
+    (ngSubmit)="submitForm()"
+  >
+    <div
+      suiFormField
+      [suiRequired]="true"
+      [suiError]="name && name.touched && name.invalid ? true : false"
+    >
+      <label for="name">Name of task</label>
+      <input
+        type="text"
+        name="name"
+        placeholder="e.g Debug my code"
+        formControlName="name"
+        id="name"
+      />
+      <div
+        sui-message
+        suiState="error"
+        *ngIf="name && name.touched && name.invalid"
+      >
+        <p>Input must not be empty and maximum words is 15.</p>
+      </div>
+    </div>
+
+    <div
+      suiFormField
+      [suiRequired]="true"
+      [suiError]="
+        description && description.touched && description.invalid ? true : false
+      "
+    >
+      <label for="description">Description of task</label>
+      <textarea
+        formControlName="description"
+        id="description"
+        placeholder="e.g I want to debug my angular code because it is giving me issues..."
+      ></textarea>
+      <div
+        sui-message
+        suiState="error"
+        *ngIf="description && description.touched && description.invalid"
+      >
+        <p>Input must not be empty and maximum words is 15.</p>
+      </div>
+    </div>
+
+    <button
+      sui-button
+      [disabled]="addTaskForm.invalid ? true : false"
+      suiEmphasis="primary"
+      type="submit"
+    >
+      Add Task
+    </button>
+  </form>
+</div>
