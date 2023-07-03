@@ -66,7 +66,7 @@ export class BoardComponent {
     >
   ): void {
     const board = event.container.element.nativeElement.parentElement
-      ?.querySelector('h2')
+      ?.querySelector('h3')
       ?.innerHTML.toLowerCase()
       .replaceAll(' ', '');
 
